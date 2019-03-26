@@ -1,5 +1,5 @@
 # jhipster-demo
-# Mongo
+# SEVIS with MongoDB
 This application was generated using JHipster 4.14.1, you can find documentation and help at [http://www.jhipster.tech/documentation-archive/v4.14.1](http://www.jhipster.tech/documentation-archive/v4.14.1).
 
 ## Development
@@ -30,6 +30,22 @@ specifying a newer version in [package.json](package.json). You can also run `ya
 Add the `help` flag on any command to see how you can use it. For example, `yarn help update`.
 
 The `yarn run` command will list all of the scripts available to run for this project.
+
+## MongoDB
+This application was setup using MongoDB as development database. To run a MongoDB instance on your local, the best way is Docker. Please use this docker image:
+
+https://hub.docker.com/_/mongo
+
+After pull this Docker image, use this command to start the container:
+
+$ docker run --name Mongo -p 27017:27017 -d mongo:latest
+
+The MongoDB will listening on port 27017. No additional setup required.
+
+For MongoDB client, I use Robo 3T:
+
+https://robomongo.org/
+
 
 ### Service workers
 
