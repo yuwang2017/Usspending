@@ -17,6 +17,7 @@ import { MongoAdminModule } from './admin/admin.module';
 import { MongoAccountModule } from './account/account.module';
 import { MongoEntityModule } from './entities/entity.module';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
+import { FeaturesModule } from './features/features.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import {
     JhiMainComponent,
@@ -37,6 +38,7 @@ import {
         MongoAdminModule,
         MongoAccountModule,
         MongoEntityModule,
+        FeaturesModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [
