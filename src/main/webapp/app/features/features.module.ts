@@ -5,6 +5,7 @@ import { MongoSharedModule } from '../shared';
 
 import {
    Feature1Component,
+   Feature2Component,
    featuresState
 } from './';
 
@@ -14,7 +15,8 @@ import {
         RouterModule.forChild(featuresState)
     ],
     declarations: [
-        Feature1Component
+        Feature1Component,
+        Feature2Component       
     ],
     providers: [
      
