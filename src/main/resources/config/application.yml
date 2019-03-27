@@ -49,7 +49,6 @@ server:
     session:
         cookie:
             http-only: true
-
 info:
     project:
         version: #project.version#
