@@ -1,9 +1,39 @@
 <h2>Feature 1</h2>
 
-    <div class="row">
+<div class="row">
         <div class="col-5">
 
-            This is feature 1 page
+            This is feature 1 page, It list all persons in SEVIS
         </div> 
+</div>
 
-    </div>
+<div class="row">
+        <div class="col-12">
+
+                <div class="table-responsive">
+                        <table class="table table-sm table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th><span>First Name</span></th>
+                                <th><span>Last Name</span></th>
+                                <th><span>Age</span></th>
+                                <th><span>Port of Entry</span></th>
+                                <th><span>Entry Date</span></th>
+                                <th><span>VISA Type</span></th>
+                            </tr>
+                            </thead>
+                            <tr *ngFor="let person of persons">
+                                <td><span>{{person.firstName}}</span></td>
+                                <td><span>{{person.lastName}}</span></td>
+                                <td><span>{{person.age}}</span></td>
+                                <td><span>{{person.portOfEntry}}</span></td>
+                                <td><span>{{person.entryDate}}</span></td>
+                                <td><span>{{person.visaType}}</span></td>
+                            </tr>
+                        </table>
+                    </div>
+
+        </div> 
+</div>
+
+

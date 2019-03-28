@@ -6,6 +6,7 @@ import { MongoSharedModule } from '../shared';
 import {
    Feature1Component,
    Feature2Component,
+   Feature1Service,
    featuresState
 } from './';
 
@@ -19,7 +20,7 @@ import {
         Feature2Component       
     ],
     providers: [
-     
+        Feature1Service
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
