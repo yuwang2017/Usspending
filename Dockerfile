@@ -16,9 +16,9 @@
 FROM tomcat:8.5-alpine
 MAINTAINER "Rupesh Kumar"
 ADD target/mongo-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps
+EXPOSE 8090
+ENTRYPOINT ["java -jar", "mongo-0.0.1-SNAPSHOT.war"]
 
-ENTRYPOINT ["/usr/local/tomcat/bin/catalina.sh", "run"]
-RUN "java -jar /usr/local/tomcat/webapps/mongo-0.0.1-SNAPSHOT.war"
 
 
 
