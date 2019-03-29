@@ -5,7 +5,7 @@
   "private": true,
   "license": "UNLICENSED",
   "cacheDirectories": [
-    "node_modules"
+    ""
   ],
   "dependencies": {
     "@angular/common": "5.2.0",
