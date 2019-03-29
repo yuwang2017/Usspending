@@ -1,5 +1,6 @@
 
-FROM tomcat:8.5-alpine
-MAINTAINER "Rupesh Kumar"
-ADD target/mongo-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps
-ENTRYPOINT ["/usr/local/tomcat/bin/catalina.sh", "run"]
+FROM openjdk:8-jre-alpine
+copy target/mongo-0.0.1-SNAPSHOT.war .
+ENTRYPOINT [ "java", "-jar", "/target/mongo-0.0.1-SNAPSHOT.war"]
+
+
