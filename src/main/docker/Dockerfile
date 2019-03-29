@@ -10,4 +10,4 @@ CMD echo "The application will start in ${JHIPSTER_SLEEP}s..." && \
 
 EXPOSE 8090
 
-ADD *.war /app.war
+ADD /var/lib/jenkins/workspace/jhipster-cicd/target/*.war /app.war
