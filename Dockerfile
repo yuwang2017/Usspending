@@ -9,6 +9,9 @@ COPY target/mongo.war .
 CMD echo "The application will start in ${JHIPSTER_SLEEP}s..." && \
     sleep ${JHIPSTER_SLEEP} && \
     java ${JAVA_OPTS} -Djava.security.egd=file:/dev/./urandom -jar mongo.war
+    
+ 
+EXPOSE 8090
 
 #ENTRYPOINT [ "java", "-jar", "mongo.jar"]
 
