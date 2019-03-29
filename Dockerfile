@@ -18,7 +18,7 @@ MAINTAINER "Rupesh Kumar"
 ADD target/mongo-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps
 
 
-#NTRYPOINT ["/usr/local/tomcat/bin/catalina.sh", "run"]
+ENTRYPOINT ["/usr/local/tomcat/webapps/mongo-0.0.1-SNAPSHOT.war", "run"]
 
 #ENTRYPOINT [ "java", "-jar", "mongo.jar"]
 
