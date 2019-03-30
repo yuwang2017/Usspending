@@ -8,15 +8,9 @@ import { ITEMS_PER_PAGE } from '../../shared';
   templateUrl: './feature2.component.html'
 })
 export class Feature2Component implements OnInit {
-   
     constructor(
-       
         private parseLinks: JhiParseLinks
     ) {
-      
     }
-  
-    ngOnInit() {
-     
-    }
+    ngOnInit() {}
 }

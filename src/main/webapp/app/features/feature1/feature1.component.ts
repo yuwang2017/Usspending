@@ -12,18 +12,41 @@ import { Feature1Service } from './feature1.service';
 })
 export class Feature1Component implements OnInit {
 
-    persons : SevisPerson[]
-   
-    constructor(    
-        private feature1Service: Feature1Service,
-        private parseLinks: JhiParseLinks
-    ) {
-      
-    }
-  
+    persons: SevisPerson[];
+    selectedPerson: SevisPerson;
+    editMode: boolean;
+
+    constructor(
+      private feature1Service: Feature1Service,
+      private parseLinks: JhiParseLinks
+    ) {}
+
     ngOnInit() {
         this.feature1Service.query({page: 1}).subscribe((res) => {
-          this.persons = res.body;      
+          this.persons = res.body;
         });
+        this.editMode = false;
     }
+
+    editPerson( id ) {
+      for ( let i = 0; i < this.persons.length; i++) {
+          if ( this.persons[i].id === id ) {
+            this.selectedPerson = this.persons[i];
+            break;
+          }
+      }
+      this.editMode = true;
+    }
+
+    deletePerson( id ) {
+      this.editMode = false;
+    }
+
+    savePerson( ) {
+      this.editMode = false;
+    }
+    cancelSavePerson( ) {
+      this.editMode = false;
+    }
+
 }

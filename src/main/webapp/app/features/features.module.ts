@@ -17,7 +17,7 @@ import {
     ],
     declarations: [
         Feature1Component,
-        Feature2Component       
+        Feature2Component
     ],
     providers: [
         Feature1Service

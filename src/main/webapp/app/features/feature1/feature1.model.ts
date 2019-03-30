@@ -1,5 +1,6 @@
 export class SevisPerson {
     constructor(
+        public id: string,
         public firstName: String,
         public lastName: string,
         public age: number,
