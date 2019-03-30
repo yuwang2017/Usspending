@@ -39,21 +39,35 @@ export class Feature1Component implements OnInit {
     }
 
     deletePerson( id ) {
-      for ( let i = 0; i < this.persons.length; i++) {
-        if ( this.persons[i].id === id ) {
-          this.persons.splice(i, 1); ;
-          break;
-        }
+      this.feature1Service.delete(id).subscribe((response) => this.onDeleteSuccess(response), () => this.onDeleteError());
     }
-      this.editMode = false;
+      
+    private onDeleteSuccess(result) {
+      this.feature1Service.query({page: 1}).subscribe((res) => {
+        this.persons = res.body;
+      }); 
+    }
+
+    private onDeleteError() {
+      
     }
 
     savePerson( ) {
-      this.editMode = false;
-      if( this.selectedPerson.id === "") {
-        this.selectedPerson.id = "" + this.persons.length;
-        this.persons.push(this.selectedPerson);
+      if (this.selectedPerson.id !== "") {
+        this.feature1Service.update(this.selectedPerson).subscribe((response) => this.onSaveSuccess(response), () => this.onSaveError());
+      } else {         
+        this.feature1Service.create(this.selectedPerson).subscribe((response) => this.onSaveSuccess(response), () => this.onSaveError());
       }
+    }
+   
+    private onSaveSuccess(result) {
+      this.feature1Service.query({page: 1}).subscribe((res) => {
+        this.persons = res.body;
+      }); 
+      this.editMode = false;
+    }
+    private onSaveError() {
+      this.editMode = true;
     }
     cancelSavePerson( ) {
       this.editMode = false;
