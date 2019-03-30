@@ -39,14 +39,29 @@ export class Feature1Component implements OnInit {
     }
 
     deletePerson( id ) {
+      for ( let i = 0; i < this.persons.length; i++) {
+        if ( this.persons[i].id === id ) {
+          this.persons.splice(i, 1); ;
+          break;
+        }
+    }
       this.editMode = false;
     }
 
     savePerson( ) {
       this.editMode = false;
+      if( this.selectedPerson.id === "") {
+        this.selectedPerson.id = "" + this.persons.length;
+        this.persons.push(this.selectedPerson);
+      }
     }
     cancelSavePerson( ) {
       this.editMode = false;
+    }
+
+    addPerson( ) {
+      this.selectedPerson = new SevisPerson( "", "",  "",  0, "", "", "" );
+      this.editMode = true;
     }
 
 }
