@@ -1,5 +1,7 @@
 FROM openjdk:8-jre-alpine
 
+MAINTAINER "Rupesh Kumar (ftcuser)"
+
 ENV SPRING_OUTPUT_ANSI_ENABLED=ALWAYS \
    JHIPSTER_SLEEP=0 \
    JAVA_OPTS=""
