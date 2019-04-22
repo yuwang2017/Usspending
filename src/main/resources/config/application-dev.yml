@@ -32,7 +32,7 @@ spring:
         serialization.indent_output: true
     data:
         mongodb:
-            uri: mongodb://ec2-3-93-25-12.compute-1.amazonaws.com:27017
+            uri: mongodb://localhost:27017
             database: Mongo
     mail:
         host: localhost
@@ -62,7 +62,7 @@ spring:
 #        key-alias: Mongo
 # ===================================================================
 server:
-    port: 8090
+    port: 8099
 
 # ===================================================================
 # JHipster specific properties
